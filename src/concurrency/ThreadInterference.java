@@ -67,8 +67,8 @@ public class ThreadInterference {
         } catch (InterruptedException ex) {
             Logger.getLogger(ThreadInterference.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("Expected Value of couter is "+(cnt1+cnt2));
-        System.out.println("Actual Value of couter is "+c.value());
+        System.out.println("Expected Value of counter is "+(cnt1+cnt2));
+        System.out.println("Actual Value of counter is "+c.value());
     }
 
 }
