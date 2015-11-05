@@ -49,6 +49,7 @@ public class Synchronise {
         t1.start();
         t2.start();
         
+        System.out.println("Expected value = "+20000);
         System.out.println("Value of Counter = " + sc.value());
     }
 }
