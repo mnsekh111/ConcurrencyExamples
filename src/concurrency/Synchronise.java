@@ -9,6 +9,10 @@ class SyncCounter {
 
     private int c = 0;
 
+    public void increment2() {
+        c++;
+    }
+
     public synchronized void increment() {
         c++;
     }
@@ -28,7 +32,7 @@ class SyncCounter {
  */
 public class Synchronise {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         SyncCounter sc = new SyncCounter();
         Thread t1 = new Thread(() -> {
@@ -48,8 +52,41 @@ public class Synchronise {
 
         t1.start();
         t2.start();
-        
-        System.out.println("Expected value = "+20000);
+
+        t1.join();
+        t2.join();
+
+        System.out.println("Expected value = " + 20000);
         System.out.println("Value of Counter = " + sc.value());
+
+        t1 = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                for (int i = 0; i < 10000; i++) {
+                    sc.increment2();
+                }
+            }
+        });
+
+        t2 = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                for (int i = 0; i < 10000; i++) {
+                    sc.increment2();
+                }
+            }
+        });
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+
+        System.out.println("Expected value = " + 40000);
+        System.out.println("Value of Counter = " + sc.value());
+
     }
 }
