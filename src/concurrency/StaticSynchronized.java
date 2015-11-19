@@ -18,14 +18,22 @@ You might wonder what happens when a static synchronized method is invoked, sinc
 public class StaticSynchronized {
 
     private static class Counter {
-        int c = 0;
-        public void increment(){
-            c++;
+        static int c = 0;
+        
+        //Acquires lock for the entire
+        public static  void incrementC(){
+            for(int i=0;i<10000;i++){
+                c++;
+            }
+        }
+        
+        public static void printC(){
+            System.out.println("Value of C "+c);
         }
         
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Counter sc = new Counter();
         Counter sc2 = new Counter();
         
@@ -33,8 +41,25 @@ public class StaticSynchronized {
 
             @Override
             public void run() {
-                
+                System.out.println(" From " + Thread.currentThread().getName() +"\n");
+                sc.incrementC();
             }
-        });
+        },"Thread 1");
+        
+        
+        Thread t2 = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                   System.out.println(" From " + Thread.currentThread().getName() +"\n");
+                sc2.printC();
+            }
+        },"Thread 2");
+        
+        t1.run();
+        t2.run();
+        
+        t1.join();
+        t2.join();
     }
 }
