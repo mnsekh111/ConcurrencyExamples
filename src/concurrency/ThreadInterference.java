@@ -12,6 +12,7 @@ import java.util.logging.Logger;
  *
  * @author mnsekh111
  */
+
 class Counter {
 
     private int c = 0;

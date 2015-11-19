@@ -72,6 +72,7 @@ public class SleepAndInterrupt {
         Thread.sleep(5000);
         System.out.println(Thread.currentThread().getName() + " is interrupting " + st2.getName());
         st2.interrupt();
+       
     }
 
 }
