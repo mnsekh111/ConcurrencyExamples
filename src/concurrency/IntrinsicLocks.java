@@ -38,15 +38,18 @@ class CountersGlobalLock {
 
 class MyRunnable implements Runnable{
     Counters sharedCounters;
-
-    public MyRunnable(Counters c){
+    int which;
+    public MyRunnable(Counters c,int which){
         sharedCounters = c;
+        this.which = which;
     }
     @Override
     public void run() {
-        for (int i = 0; i < 100000; i++) {
-            sharedCounters.inc1();
-            sharedCounters.inc2();
+        for (int i = 0; i < 1000000; i++) {
+            if(which == 1)
+                sharedCounters.inc1();
+            else
+                sharedCounters.inc2();
         }
     }
 }
@@ -54,15 +57,18 @@ class MyRunnable implements Runnable{
 
 class MyRunnable2 implements Runnable{
     CountersGlobalLock sharedCounters;
-
-    public MyRunnable2(CountersGlobalLock c){
+    int which;
+    public MyRunnable2(CountersGlobalLock c,int which){
         sharedCounters = c;
+        this.which = which;
     }
     @Override
     public void run() {
-        for (int i = 0; i < 100000; i++) {
-            sharedCounters.inc1();
-            sharedCounters.inc2();
+        for (int i = 0; i < 1000000; i++) {
+            if(which == 1)
+                sharedCounters.inc1();
+            else
+                sharedCounters.inc2();
         }
     }
 }
@@ -74,8 +80,8 @@ public class IntrinsicLocks {
         Counters sharedCounters = new Counters();
         Counters sharedCounters2 = new Counters();
 
-        Thread t1 = new Thread(new MyRunnable(sharedCounters));
-        Thread t2 = new Thread(new MyRunnable(sharedCounters));
+        Thread t1 = new Thread(new MyRunnable(sharedCounters,1));
+        Thread t2 = new Thread(new MyRunnable(sharedCounters,2));
 
         long startTime = System.currentTimeMillis();
         t1.start();
@@ -91,8 +97,8 @@ public class IntrinsicLocks {
         CountersGlobalLock sc1 = new CountersGlobalLock();
         CountersGlobalLock sc2 = new CountersGlobalLock();
 
-        Thread t3 = new Thread(new MyRunnable2(sc1));
-        Thread t4 = new Thread(new MyRunnable2(sc2));
+        Thread t3 = new Thread(new MyRunnable2(sc1,1));
+        Thread t4 = new Thread(new MyRunnable2(sc2,2));
 
         startTime = System.currentTimeMillis();
         t3.start();
