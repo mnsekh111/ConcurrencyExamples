@@ -31,7 +31,7 @@ class CountersGlobalLock {
         c1++;
     }
 
-    synchronized void inc2() {
+    synchronized public void inc2() {
         c2++;
     }
 }
