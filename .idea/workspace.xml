@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ed2a210-14f4-4cef-893a-1172018a38e6" name="Default" comment="compared intrinsic lock to global locks">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/concurrency/DaemonThreads.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ConcurrencyExamples/concurrency/CountersGlobalLock.class" afterPath="$PROJECT_DIR$/out/production/ConcurrencyExamples/concurrency/CountersGlobalLock.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/concurrency/WaitNotify.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/concurrency/IntrinsicLocks.java" afterPath="$PROJECT_DIR$/src/concurrency/IntrinsicLocks.java" />
     </list>
     <list id="456d8a00-11b0-4b4b-8d00-de1ac4bfebcc" name="Rejected commit: Default" comment="compared intrinsic lock to global locks" />
     <ignored path="ConcurrencyExamples.iws" />
@@ -48,12 +46,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DaemonThreads.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DaemonThreads.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/concurrency/DaemonThreads.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61464965">
+            <state vertical-scroll-proportion="0.0">
               <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WaitNotify.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/concurrency/WaitNotify.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.49044585">
+              <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+              <folding>
+                <element signature="e#842#843#0" expanded="true" />
+                <element signature="e#869#870#0" expanded="true" />
+                <element signature="e#1125#1126#0" expanded="true" />
+                <element signature="e#1152#1153#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,6 +99,7 @@
         <option value="$PROJECT_DIR$/src/concurrency/ThreadInterference.java" />
         <option value="$PROJECT_DIR$/src/concurrency/IntrinsicLocks.java" />
         <option value="$PROJECT_DIR$/src/concurrency/DaemonThreads.java" />
+        <option value="$PROJECT_DIR$/src/concurrency/WaitNotify.java" />
       </list>
     </option>
   </component>
@@ -181,6 +195,28 @@
               <option name="myItemId" value="concurrency" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WaitNotify.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ConcurrencyExamples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ConcurrencyExamples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="concurrency" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -216,7 +252,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../LearningPython" />
     <property name="SearchEverywhereHistoryKey" value="gi&#9;ACTION&#9;Git.Menu&#10;plugins&#9;ACTION&#9;WelcomeScreen.Plugins" />
   </component>
-  <component name="RunManager" selected="Application.DaemonThreads">
+  <component name="RunManager" selected="Application.WaitNotify">
     <configuration default="false" name="ThreadInterference" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -265,6 +301,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="concurrency.DaemonThreads" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ConcurrencyExamples" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="WaitNotify" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="concurrency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="concurrency.WaitNotify" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -643,16 +699,18 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.ThreadInterference" />
       <item index="1" class="java.lang.String" itemvalue="Application.IntrinsicLocks" />
       <item index="2" class="java.lang.String" itemvalue="Application.DaemonThreads" />
+      <item index="3" class="java.lang.String" itemvalue="Application.WaitNotify" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.DaemonThreads" />
-        <item index="1" class="java.lang.String" itemvalue="Application.IntrinsicLocks" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ThreadInterference" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Application.WaitNotify" />
+        <item index="1" class="java.lang.String" itemvalue="Application.DaemonThreads" />
+        <item index="2" class="java.lang.String" itemvalue="Application.IntrinsicLocks" />
+        <item index="3" class="java.lang.String" itemvalue="Application.ThreadInterference" />
       </list>
     </recent_temporary>
   </component>
@@ -802,9 +860,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/concurrency/DaemonThreads.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61464965">
+        <state vertical-scroll-proportion="0.0">
           <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/concurrency/WaitNotify.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49044585">
+          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+          <folding>
+            <element signature="e#842#843#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#1125#1126#0" expanded="true" />
+            <element signature="e#1152#1153#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
